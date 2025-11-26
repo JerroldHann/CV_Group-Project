@@ -4,6 +4,7 @@
 它通过摄像头画面，结合：
 
 - **YOLOWorld 目标检测**（Ultralytics YOLOv8-Worldv2）
+- **Vit-GPT2 场景推理**
 - **EasyOCR 文本识别（OCR）**
 - **语音识别 + TTS 语音播报**
 - **Google Gemini 大模型意图推理**
@@ -17,6 +18,9 @@
 - **YOLOWorld 实时目标检测**
   - 支持丰富的检测类别：人物、人体部位、家具、交通工具、动物、障碍物、日用品等
   - 可自定义类别列表，在初始化 `YOLOWorldDetector` 时传入 `classes` 参数
+
+- **Vit-GPT2 场景推理**
+  - 拥有多样化的场景词库
 
 - **Gemini 加持的意图推理（IntentInference）**
   - 基于用户语音指令（command）+ 视觉检测结果（objects）+ OCR 文本（ocr_texts）
@@ -45,6 +49,6 @@
 
 ```text
 .
-├── yolo.py         # YOLOWorldDetector：主入口，负责摄像头采集、YOLO 检测、语音线程启动、OCR 调度
+├── main.py         # YOLOWorldDetector：主入口，负责摄像头采集、YOLO 检测、场景推理、语音线程启动、OCR 调度
 ├── intent.py       # IntentInference：意图推理引擎，封装 Gemini 调用与规则逻辑预留
 └── ocr.py          # OCRProcessor：EasyOCR 英文文字识别，异步处理帧，提供最新 OCR 结果

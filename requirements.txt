@@ -3,3 +3,6 @@ opencv-python
 SpeechRecognition
 pyttsx3
 ultralytics
+cv2
+threading
+sklearn
